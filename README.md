@@ -13,7 +13,7 @@ This project is simply to demonstrate the use of the following statements;
 
 ### Installing
 
-* git clone https://github.com/sogobanwo/MetaCraftersAV-ErrorHandling-.git
+* git clone [https://github.com/Boluchel/EtherBank.git](https://github.com/Boluchel/EtherBank.git)
 * npm install
 
 ### Executing program
