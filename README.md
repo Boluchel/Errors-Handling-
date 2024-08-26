@@ -1,35 +1,49 @@
 # EtherBank
 
-A simple contract showing the use of the require, assert, and revert statements
+## Overview
+EtherBank is a simple Ethereum smart contract that demonstrates the use of require, assert, and revert statements. It allows users to deposit and withdraw Ether, showcasing basic banking functionality.
 
 ## Description
-
-This project is simply to demonstrate the use of the following statements;
-1. require()
-2. assert()
-3. revert()
+This project highlights the importance of input validation and error handling in smart contract development. The contract utilizes the following statements:
+* require: Ensures conditions are met before executing code.
+* assert: Validates state conditions, useful for debugging.
+* revert: Rolls back transactions when errors occur.
 
 ## Getting Started
 
-### Installing
-
-* git clone [https://github.com/Boluchel/EtherBank.git](https://github.com/Boluchel/EtherBank.git)
-* npm install
-
-### Executing program
-
-* 
-* Step-by-step bullets
+### Installation
+```
+git clone https://github.com/Boluchel/EtherBank.git
+npm install
+```
+### Deployment
 ```
 npx hardhat compile
 ```
 
-```
+## Contract Details
+* Contract Name: EtherBank
+* Functions:
+    * deposit(): Deposits Ether into the contract.
+    * withdraw(uint256 _amount): Withdraws Ether from the contract.
+    * totalBalance(): Returns the contract's total Ether balance.
 
-## Author
 
+## Functions
+### deposit()
+* Access: External
+* Description: Deposits Ether into the contract, requiring a minimum of 1 Ether.
+
+### withdraw(uint256 _amount)
+* Access: External
+* Description: Withdraws Ether from the contract, ensuring sufficient balance.
+
+### totalBalance()
+* Access: External View
+* Description:  Returns the contract's total Ether balance.
+
+## Authors
 Banwo Boluwatife
-
 
 ## License
 
