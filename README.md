@@ -13,7 +13,7 @@ The contract includes three functions, each showcasing a different error handlin
 
 ### Installation
 ```
-git clone https://github.com/your-repo/Errors.git
+git clone https://github.com/Boluchel/Errors-Handling-.git
 npm install
 ```
 ### Deployment
