@@ -27,7 +27,7 @@ npx hardhat compile
 ### Contract Name: Crowdfunding
 
 ### Functions
-createCampaign(...)
+createCampaign(string memory _title, string memory _description, uint256 _goal, address _benefactor, uint256 _duration)
 * Access: External
 * Description: Creates a new crowdfunding campaign.
 
@@ -44,7 +44,7 @@ withdraw(uint256 _campaignID)
 * Description: Withdraws funds from a campaign.
 
 ### Events
-createdCampaign(...)
+createdCampaign( string indexed title, string indexed description, uint256 indexed goal, uint256 amountRaised)
 * Description: Emitted when a new campaign is created.
 
 ### Errors
