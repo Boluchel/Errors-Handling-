@@ -1,13 +1,14 @@
-# Errors
+# Crowdfunding
 
 ## Overview
-This contract demonstrates the use of error handling mechanisms in Solidity, including require, revert, and assert.
+This contract enables the creation and management of crowdfunding campaigns, allowing users to donate and benefactors to withdraw funds.
 
 ## Description
-The contract includes three functions, each showcasing a different error handling approach:
-* testRequire: Uses require to validate input and revert if the condition is not met.
-* testRevert: Uses revert to explicitly revert the transaction if the condition is not met.
-* testAssert: Uses assert to validate a condition and revert if it's not met.
+The contract includes the following functionality:
+* Create Campaign: Allows users to create a new crowdfunding campaign with a title, description, goal, benefactor, and duration.
+* Get Campaign: Returns the details of a specific campaign.
+* Donate to Campaign: Enables users to donate to a campaign.
+* Withdraw from Campaign: Allows the benefactor to withdraw funds from a campaign once the deadline has passed.
 
 ## Getting Started
 
@@ -22,25 +23,33 @@ npx hardhat compile
 ```
 
 ## Contract Details
-* Contract Name: EtherBank
-* Functions:
-    * deposit(): Deposits Ether into the contract.
-    * withdraw(uint256 _amount): Withdraws Ether from the contract.
-    * totalBalance(): Returns the contract's total Ether balance.
 
+### Contract Name: Crowdfunding
 
-## Functions
-testRequire(uint256 _amount)
-* Access: External Pure
-* Description: Tests the require statement by validating if _amount is greater than zero.
-  
-testRevert(uint256 _amount)
-* Access: External Pure
-* Description: Tests the revert statement by validating if _amount is greater than zero.
-  
-testAssert(uint256 _amount)
-* Access: External Pure
-* Description: Tests the assert statement by validating if _amount is greater than two after incrementing it.
+### Functions
+createCampaign(...)
+* Access: External
+* Description: Creates a new crowdfunding campaign.
+getCampaign(uint256 _campaignID)
+* Access: External View
+* Description: Returns the details of a specific campaign.
+donateToCampaign(uint256 _campaignID)
+* Access: External Payable
+* Description: Donates to a campaign.
+withdraw(uint256 _campaignID)
+* Access: External
+* Description: Withdraws funds from a campaign.
+
+### Events
+createdCampaign(...)
+* Description: Emitted when a new campaign is created.
+
+### Errors
+* GOAL_CANNOT_BE_ZERO(): Thrown when the campaign goal is zero.
+* DURATION_MUST_BE_GREATER_THAN_ZERO(): Thrown when the campaign duration is less than or equal to zero.
+* INVALID_CAMPAIGN_ID(): Thrown when the campaign ID is invalid.
+* ONLY_BENEFACTOR_CAN_WITHDRAW(): Thrown when a non-benefactor attempts to withdraw funds.
+* CAMPAIGN_STILL_ACTIVE(): Thrown when attempting to withdraw funds from an active campaign.
 
 ## Authors
 Banwo Boluwatife
