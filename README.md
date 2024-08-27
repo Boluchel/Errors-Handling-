@@ -30,12 +30,15 @@ npx hardhat compile
 createCampaign(...)
 * Access: External
 * Description: Creates a new crowdfunding campaign.
+
 getCampaign(uint256 _campaignID)
 * Access: External View
 * Description: Returns the details of a specific campaign.
+  
 donateToCampaign(uint256 _campaignID)
 * Access: External Payable
 * Description: Donates to a campaign.
+  
 withdraw(uint256 _campaignID)
 * Access: External
 * Description: Withdraws funds from a campaign.
