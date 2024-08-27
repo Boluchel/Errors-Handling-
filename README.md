@@ -1,19 +1,19 @@
-# EtherBank
+# Errors
 
 ## Overview
-EtherBank is a simple Ethereum smart contract that demonstrates the use of require, assert, and revert statements. It allows users to deposit and withdraw Ether, showcasing basic banking functionality.
+This contract demonstrates the use of error handling mechanisms in Solidity, including require, revert, and assert.
 
 ## Description
-This project highlights the importance of input validation and error handling in smart contract development. The contract utilizes the following statements:
-* require: Ensures conditions are met before executing code.
-* assert: Validates state conditions, useful for debugging.
-* revert: Rolls back transactions when errors occur.
+The contract includes three functions, each showcasing a different error handling approach:
+* testRequire: Uses require to validate input and revert if the condition is not met.
+* testRevert: Uses revert to explicitly revert the transaction if the condition is not met.
+* testAssert: Uses assert to validate a condition and revert if it's not met.
 
 ## Getting Started
 
 ### Installation
 ```
-git clone https://github.com/Boluchel/EtherBank.git
+git clone https://github.com/your-repo/Errors.git
 npm install
 ```
 ### Deployment
@@ -30,17 +30,15 @@ npx hardhat compile
 
 
 ## Functions
-### deposit()
-* Access: External
-* Description: Deposits Ether into the contract, requiring a minimum of 1 Ether.
-
-### withdraw(uint256 _amount)
-* Access: External
-* Description: Withdraws Ether from the contract, ensuring sufficient balance.
-
-### totalBalance()
-* Access: External View
-* Description:  Returns the contract's total Ether balance.
+testRequire(uint256 _amount)
+* Access: External Pure
+* Description: Tests the require statement by validating if _amount is greater than zero.
+testRevert(uint256 _amount)
+* Access: External Pure
+* Description: Tests the revert statement by validating if _amount is greater than zero.
+testAssert(uint256 _amount)
+* Access: External Pure
+* Description: Tests the assert statement by validating if _amount is greater than two after incrementing it.
 
 ## Authors
 Banwo Boluwatife
